@@ -15,8 +15,8 @@ const IndexPage = () => {
       <Layout>
         <Seo title="Home" />
 
-        <Media queries={{ small: { maxWidth: 720 } }}>
-          {matches => (matches.small ? <Hero /> : <HeroDesktop />)}
+        <Media queries={{ medium: { minWidth: 720 } }}>
+          {matches => (matches.medium ? <HeroDesktop /> : <Hero />)}
         </Media>
         <Number />
 
