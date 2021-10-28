@@ -1,0 +1,123 @@
+// Global styling, can use global.scss or layout.scss
+
+@import "typography";
+@import "mixins";
+@import "variables";
+
+// Global styling
+*::before,
+*::after {
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+    min-width: 100%;
+    min-height: 100vh;
+    font-family: $primaryFont;
+    font-size: 14px;
+    color: $textColor;
+
+    @include breakpoint(md) {
+        font-size: 16px;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover,
+    &.active {
+        color: $muted;
+    }
+}
+
+button {
+    padding: 1rem 2rem;
+    font-family: $primaryFont;
+    font-weight: bolder;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    &.primary {
+        background-color: $primaryColor;
+        color: white;
+    }
+}
+
+section {
+    margin: 35px 0;
+
+    @include breakpoint(md) {
+        margin: 50px 0;
+    }
+}
+
+// Utils
+.container {
+    max-width: 100%;
+    margin: 0 15px;
+
+    @include breakpoint(xl) {
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+}
+
+.f-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.font-normal {
+    font-weight: 400;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+
+    &.col-2 {
+        @include breakpoint(md) {
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+    }
+
+    &.col-3 {
+        @include breakpoint(md) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5rem;
+        }
+    }
+}
+
+.square {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-color: $squareColor;
+
+    &.sm {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.home.square.sm {
+    position: fixed;
+    bottom: 0;
+    left: 150px;
+}

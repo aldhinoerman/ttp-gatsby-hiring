@@ -1,0 +1,11 @@
+// Number section styling for desktop view
+
+@import "../mixins";
+@import "../variables";
+
+#number {
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+    }
+}
